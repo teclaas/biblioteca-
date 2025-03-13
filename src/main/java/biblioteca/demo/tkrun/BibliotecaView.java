@@ -31,6 +31,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JCheckBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JFormattedTextField;
+import javax.swing.JProgressBar;
 public class BibliotecaView {
 
 		protected JFrame frmBiblioteca;
@@ -77,10 +79,10 @@ public class BibliotecaView {
 			textfield = new JLabel("NUMERO SOCIO");
 			textfield.setBackground(new Color(51, 255, 51));
 			textfield.setHorizontalAlignment(SwingConstants.LEFT);
-			textfield.setFont(new Font("Venus Rising", Font.ITALIC, 26));
+			textfield.setFont(new Font("Venus Rising", Font.ITALIC, 21));
 			textfield.setForeground(new Color(51, 51, 255));
 			textfield.setToolTipText("NUMERO SOCIO");
-			textfield.setBounds(24, 78, 372, 42);
+			textfield.setBounds(24, 78, 319, 42);
 			frmBiblioteca.getContentPane().add(textfield);
 			
 			scrollPane = new JScrollPane();
@@ -94,11 +96,13 @@ public class BibliotecaView {
 			});
 			scrollPane.setViewportBorder(new CompoundBorder());
 			scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-			scrollPane.setToolTipText("LISTADE LIBROS\r\n\r\n- HISTORIA\r\n-CIENCIA FICCIÓN\r\n-NOVELAS");
-			scrollPane.setBounds(43, 151, 499, 217);
+			scrollPane.setToolTipText("LISTA DE LIBROS\r\n\r\n- HISTORIA\r\n-CIENCIA FICCIÓN\r\n-NOVELAS");
+			scrollPane.setBounds(27, 163, 499, 217);
 			frmBiblioteca.getContentPane().add(scrollPane);
 			
 			table = new JTable();
+			table.setFont(new Font("Venus Rising", Font.PLAIN, 13));
+			table.setToolTipText("El numero de los prestamos ");
 			table.setForeground(new Color(0, 0, 255));
 			table.setModel(new DefaultTableModel(
 				new Object[][] {
@@ -120,24 +124,30 @@ public class BibliotecaView {
 					{null, null, null, null},
 				},
 				new String[] {
-					"New column", "New column", "New column", "New column"
+					"isbn", "libros", "nºsocio", "lista de libros"
 				}
 			));
 			scrollPane.setViewportView(table);
 			
 			passwordField = new JPasswordField();
+			passwordField.setBackground(Color.GREEN);
+			passwordField.setForeground(Color.MAGENTA);
 			passwordField.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 				}
 			});
 			passwordField.setToolTipText("Log in\r\n\r\nusuario :********************\r\ncontraseña:******************\r\n\r\n\r\n¿olvidaste la contraseña?");
 			passwordField.setHorizontalAlignment(SwingConstants.TRAILING);
-			passwordField.setBounds(580, 90, 351, 85);
+			passwordField.setBounds(575, 78, 351, 85);
 			frmBiblioteca.getContentPane().add(passwordField);
 			
 			JCheckBox chckbxNewCheckBox = new JCheckBox("REGISTRATE\r\n");
-			chckbxNewCheckBox.setBounds(592, 58, 112, 24);
+			chckbxNewCheckBox.setBounds(589, 35, 112, 24);
 			frmBiblioteca.getContentPane().add(chckbxNewCheckBox);
+			
+			JProgressBar progressBar = new JProgressBar();
+			progressBar.setBounds(112, 454, 78, -58);
+			frmBiblioteca.getContentPane().add(progressBar);
 			frmBiblioteca.setVisible(true);
 			
 		}

@@ -15,6 +15,11 @@ import java.awt.BorderLayout;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JTextField;
 import java.awt.Color;
+import javax.swing.JPopupMenu;
+import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JLabel;
 
 
 /**
@@ -60,7 +65,7 @@ public class SwingMain {
 		frame.setTitle("Main");
 		frame.setBounds(0, 0, 287, 185);
 		frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(new MigLayout("", "[][grow]", "[][][]"));
+		frame.getContentPane().setLayout(new MigLayout("", "[][][][grow]", "[][][]"));
 		
 		JButton btnNewButton = new JButton("Prestamos");
 		btnNewButton.setBackground(new Color(0, 255, 0));
@@ -69,7 +74,7 @@ public class SwingMain {
 				
 			}
 		});
-		frame.getContentPane().add(btnNewButton, "cell 0 0");
+		frame.getContentPane().add(btnNewButton, "cell 0 0,aligny top");
 		
 		JButton btnNewButton_1 = new JButton("Socios");
 		btnNewButton_1.setBackground(new Color(0, 255, 0));
@@ -97,4 +102,21 @@ public class SwingMain {
 		
 	public JFrame getFrame() { return this.frame; }
 	
+	private static void addPopup(Component component, final JPopupMenu popup) {
+		component.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			public void mouseReleased(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			private void showMenu(MouseEvent e) {
+				popup.show(e.getComponent(), e.getX(), e.getY());
+			}
+		});
+	}
 }
