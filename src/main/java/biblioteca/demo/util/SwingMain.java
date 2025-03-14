@@ -3,7 +3,7 @@ package biblioteca.demo.util;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 
-import biblioteca.demo.tkrun.BibliotecaView;
+import biblioteca.demo.tkrun.*;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -63,7 +63,7 @@ public class SwingMain {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(240, 240, 240));
 		frame.setTitle("Main");
-		frame.setBounds(0, 0, 287, 185);
+		frame.setBounds(0, 0, 202, 171);
 		frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new MigLayout("", "[][][][grow]", "[][][]"));
 		
@@ -71,7 +71,7 @@ public class SwingMain {
 		btnNewButton.setBackground(new Color(0, 255, 0));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				PrestamoView prestamoVista = new PrestamoView();
 			}
 		});
 		frame.getContentPane().add(btnNewButton, "cell 0 0,aligny top");
