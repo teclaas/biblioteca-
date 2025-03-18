@@ -39,6 +39,7 @@ public class PrestamoView {
 		// TODO Auto-generated method stub
 		frmPrestamo = new JFrame();
 		frmPrestamo.getContentPane().setLayout(new MigLayout("", "[][grow]", "[][][][][][][]"));
+		frmPrestamo.setBounds(0,0,550,180); //para ponerle tamaño a la ventana
 		
 		JLabel lblNewLabel = new JLabel("numero de socio\r\n");
 		frmPrestamo.getContentPane().add(lblNewLabel, "flowy,cell 0 0,alignx trailing");
