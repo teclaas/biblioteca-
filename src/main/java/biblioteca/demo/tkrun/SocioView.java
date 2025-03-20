@@ -96,7 +96,9 @@ public class SocioView {
 			JButton btnNewButton_2 = new JButton("MODIFICACION DE LIBROS\r\n");
 			frmSocioView.getContentPane().add(btnNewButton_2, "cell 0 5");
 			
-			
+			JFrame frmPrestamo = null;
+			frmPrestamo.getContentPane().add(btnNewButton_1, "cell 1 6");
+			frmPrestamo.setVisible(true);
 			
 		}
 		

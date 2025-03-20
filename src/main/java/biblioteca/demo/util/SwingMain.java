@@ -80,6 +80,7 @@ public class SwingMain {
 		btnNewButton_1.setBackground(new Color(0, 255, 0));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+					SocioView SocioVista = new SocioView();
 			}
 		});
 		frame.getContentPane().add(btnNewButton_1, "cell 0 1");
