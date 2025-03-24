@@ -24,6 +24,7 @@ import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EtchedBorder;
+import javax.swing.JTabbedPane;
 
 public class SocioView {
 
@@ -83,6 +84,10 @@ public class SocioView {
 			txtNombre.setColumns(10);
 			
 			txtNumeroDeSocio = new JTextField();
+			txtNumeroDeSocio.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
 			txtNumeroDeSocio.setText("Numero de socio");
 			frmSocioView.getContentPane().add(txtNumeroDeSocio, "cell 0 3,growx");
 			txtNumeroDeSocio.setColumns(10);

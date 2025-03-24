@@ -1,26 +1,6 @@
 package biblioteca.demo.util;
 
-import java.awt.EventQueue;
-import javax.swing.JFrame;
-
-import biblioteca.demo.tkrun.*;
-
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-import biblioteca.demo.tkrun.*;
-import java.awt.BorderLayout;
-import net.miginfocom.swing.MigLayout;
-import javax.swing.JTextField;
-import java.awt.Color;
-import javax.swing.JPopupMenu;
-import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JLabel;
-
+import biblioteca.demo.run.BibliotecaController;[]
 
 /**
  * Punto de entrada principal que incluye botones para la ejecucion de las pantallas 
@@ -80,7 +60,8 @@ public class SwingMain {
 		btnNewButton_1.setBackground(new Color(0, 255, 0));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					SocioView SocioVista = new SocioView();
+					SocioView SocioVista = new SocioView()
+						;
 			}
 		});
 		frame.getContentPane().add(btnNewButton_1, "cell 0 1");
